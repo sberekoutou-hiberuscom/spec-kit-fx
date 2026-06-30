@@ -4,9 +4,8 @@
 >
 > Phase: 0 – Product, UX & UI Domain Integration
 
----
 
-# Vision
+## Framework Architecture
 
 The Specification Orchestration Framework (SOF) extends Specification Driven Development (SDD) into a domain-oriented orchestration framework.
 
@@ -18,8 +17,7 @@ The framework is designed to support AI-assisted development, structured specifi
 
 ---
 
-# Core Principles
-
+## Core Principles
 ## Constitution First
 
 Every project begins with a constitution.
@@ -108,7 +106,7 @@ Every domain implements the same contract.
 
 ---
 
-# Framework Architecture
+## ## Framework Architecture
 
 The framework consists of four layers.
 
@@ -130,7 +128,7 @@ The framework consists of four layers.
 
 ---
 
-# Repository Structure
+## ## Repository Structure
 
 ```
 specs/
@@ -153,7 +151,7 @@ Future domains will extend the same structure.
 
 ---
 
-# Pipeline
+## ## Pipeline
 
 The project lifecycle is defined by a configurable pipeline.
 
@@ -199,7 +197,7 @@ The pipeline defines:
 
 ---
 
-# Domain Contract
+## ## Domain Contract
 
 Every domain implements the same interface.
 
@@ -223,7 +221,7 @@ The orchestrator interacts only with this contract.
 
 ---
 
-# Domain Manifest
+## ## Domain Manifest
 
 Every domain contains a manifest.
 
@@ -265,7 +263,7 @@ The framework loads domains dynamically.
 
 ---
 
-# Domain Lifecycle
+## ## Domain Lifecycle
 
 Every domain follows the same execution lifecycle.
 
@@ -295,7 +293,7 @@ Publish Outputs
 
 ---
 
-# Canonical Object Model
+## ## Canonical Object Model
 
 Every object follows the same schema.
 
@@ -341,7 +339,7 @@ metadata:
 
 ---
 
-# Orchestration Engine
+## ## Orchestration Engine
 
 The orchestrator is responsible for
 
@@ -358,7 +356,7 @@ All domain behavior is delegated to plugins.
 
 ---
 
-# User Interaction Model
+## ## User Interaction Model
 
 The framework preserves the familiar Specification Driven Development workflow.
 
@@ -422,7 +420,7 @@ The framework determines which domain is active.
 
 ---
 
-# Additional Framework Commands
+## ## Additional Framework Commands
 
 The framework introduces only four new commands.
 
@@ -511,7 +509,7 @@ Examples
 
 ---
 
-# Adapter Architecture
+## ## Adapter Architecture
 
 External tools interact with the framework through adapters.
 
@@ -540,7 +538,7 @@ They never become the source of truth.
 
 ---
 
-# Phase 0 Scope
+## ## Phase 0 Scope
 
 Phase 0 introduces three domains.
 
@@ -588,7 +586,7 @@ without requiring changes to the framework core.
 
 ---
 
-# Long-Term Goal
+## ## Long-Term Goal
 
 The long-term objective is to create a domain-agnostic specification orchestration framework.
 
