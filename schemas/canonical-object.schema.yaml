@@ -1,0 +1,51 @@
+---
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "Canonical Object"
+description: "Schema describing a canonical object model used across domains."
+type: object
+required:
+  - id
+  - name
+  - fields
+properties:
+  id:
+    type: string
+    description: "Unique canonical object identifier"
+  name:
+    type: string
+    description: "Human-friendly object name"
+  description:
+    type: string
+  version:
+    type: string
+    description: "Object model version (semver)"
+    pattern: "^\\d+\\.\\d+\\.\\d+$"
+  schemaVersion:
+    type: string
+    default: "1.0"
+  fields:
+    type: array
+    description: "List of field definitions for the canonical object"
+    items:
+      type: object
+      required:
+        - name
+        - type
+      properties:
+        name:
+          type: string
+          description: "Field name"
+        type:
+          type: string
+          description: "Primitive or complex type"
+          enum: [string, integer, number, boolean, object, array, datetime]
+        required:
+          type: boolean
+          default: false
+        description:
+          type: string
+        constraints:
+          type: object
+          description: "Optional constraints (min/max/regex/enums)"
+          additionalProperties: true
+additionalProperties: false

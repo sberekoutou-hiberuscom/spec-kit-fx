@@ -1,0 +1,54 @@
+---
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "Domain Manifest"
+description: "Schema for a repository-level domain manifest describing domains, canonical objects and contracts."
+type: object
+required:
+  - id
+  - name
+  - version
+  - domains
+properties:
+  id:
+    type: string
+    description: "Unique manifest identifier (URN or UUID)"
+  name:
+    type: string
+    description: "Human-friendly manifest name"
+  version:
+    type: string
+    description: "Semantic version (MAJOR.MINOR.PATCH)"
+    pattern: "^\\d+\\.\\d+\\.\\d+$"
+  description:
+    type: string
+  schemaVersion:
+    type: string
+    description: "Schema version for the manifest format"
+    default: "1.0"
+  domains:
+    type: array
+    description: "List of domains described by this manifest"
+    items:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+          description: "Unique domain id"
+        name:
+          type: string
+        description:
+          type: string
+        canonicalObjects:
+          type: array
+          items:
+            type: string
+          description: "References to canonical object ids"
+        contracts:
+          type: array
+          items:
+            type: string
+          description: "References to contract/resource ids"
+additionalProperties: false
