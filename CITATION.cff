@@ -3,7 +3,7 @@ message: >-
   If you use Spec Kit in your research or reference it in a paper,
   please cite it using the metadata below.
 type: software
-title: "Spec Kit"
+title: "spec-kit-fx"
 abstract: >-
   Spec Kit is an open source toolkit for Spec-Driven Development (SDD) —
   a methodology that helps software teams build high-quality software faster
@@ -11,12 +11,10 @@ abstract: >-
   Specify CLI, slash-command templates, extensions, presets, workflows, and
   integrations for popular AI coding agents.
 authors:
-  - given-names: Den
-    family-names: Delimarsky
-    alias: localden
-  - given-names: Manfred
-    family-names: Riem
-    alias: mnriem
+  - given-names: Steve
+    family-names: BEREKOUTOU
+    orcid: ""
+    affiliation: "spec-kit-fx"
 repository-code: "https://github.com/github/spec-kit"
 url: "https://github.github.io/spec-kit/"
 license: MIT

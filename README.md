@@ -1,7 +1,7 @@
 <div align="center">
-    <img src="./media/logo_large.webp" alt="Spec Kit Logo" width="200" height="200"/>
-    <h1>🌱 Spec Kit</h1>
-    <h3><em>Build high-quality software faster.</em></h3>
+    <img src="./media/logo_large.webp" alt="spec-kit-fx Logo" width="200" height="200"/>
+    <h1>🌱 spec-kit-fx (fork)</h1>
+    <h3><em>Fork of Spec Kit maintained by Steve BEREKOUTOU.</em></h3>
 </div>
 
 <p align="center">
@@ -9,10 +9,8 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/github/spec-kit/releases/latest"><img src="https://img.shields.io/github/v/release/github/spec-kit" alt="Latest Release"/></a>
-    <a href="https://github.com/github/spec-kit/stargazers"><img src="https://img.shields.io/github/stars/github/spec-kit?style=social" alt="GitHub stars"/></a>
-    <a href="https://github.com/github/spec-kit/blob/main/LICENSE"><img src="https://img.shields.io/github/license/github/spec-kit" alt="License"/></a>
-    <a href="https://github.github.io/spec-kit/"><img src="https://img.shields.io/badge/docs-GitHub_Pages-blue" alt="Documentation"/></a>
+    <img src="https://img.shields.io/badge/fork-spec-kit-blue" alt="Fork"/>
+    <img src="https://img.shields.io/badge/owner-Steve%20BEREKOUTOU-green" alt="Owner"/>
 </p>
 
 ---
