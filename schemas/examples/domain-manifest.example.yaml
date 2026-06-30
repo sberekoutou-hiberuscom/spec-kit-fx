@@ -1,0 +1,13 @@
+id: "urn:speckit:manifest:example"
+name: "Example Domain Manifest"
+version: "1.0.0"
+schemaVersion: "1.0"
+description: "A minimal example manifest for tests"
+domains:
+  - id: "domain:documents"
+    name: "Documents"
+    description: "Document-related domain"
+    canonicalObjects:
+      - "doc:canonical:document"
+    contracts:
+      - "contract:document:public"

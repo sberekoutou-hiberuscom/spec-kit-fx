@@ -1,0 +1,16 @@
+id: "doc:canonical:document"
+name: "Document"
+version: "1.0.0"
+schemaVersion: "1.0"
+description: "Canonical document object"
+fields:
+  - name: "id"
+    type: "string"
+    required: true
+    description: "Stable identifier for document"
+  - name: "title"
+    type: "string"
+    required: true
+  - name: "created_at"
+    type: "datetime"
+    required: false
