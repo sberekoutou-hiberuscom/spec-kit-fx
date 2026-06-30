@@ -397,6 +397,7 @@ class YamlIntegrationTests:
                 "create-new-feature.sh",
                 "setup-plan.sh",
                 "setup-tasks.sh",
+                "validate-schemas.sh",
             ]:
                 files.append(f".specify/scripts/bash/{name}")
         else:

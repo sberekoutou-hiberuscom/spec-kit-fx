@@ -424,6 +424,7 @@ class SkillsIntegrationTests:
                 ".specify/scripts/bash/create-new-feature.sh",
                 ".specify/scripts/bash/setup-plan.sh",
                 ".specify/scripts/bash/setup-tasks.sh",
+                ".specify/scripts/bash/validate-schemas.sh",
             ]
         else:
             files += [

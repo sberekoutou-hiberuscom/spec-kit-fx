@@ -1,0 +1,22 @@
+---
+schemaVersion: "1.0"
+failureBehavior: halt
+resumable: true
+stages:
+  - id: read-upstream
+    name: Read Upstream
+    execution_order: 1
+  - id: validate-inputs
+    name: Validate Inputs
+    execution_order: 2
+    prerequisites:
+      - read-upstream
+    validation_gates:
+      - schema
+  - id: generate-domain-objects
+    name: Generate Domain Objects
+    execution_order: 3
+    prerequisites:
+      - validate-inputs
+    validation_gates:
+      - references

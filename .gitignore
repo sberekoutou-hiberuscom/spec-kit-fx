@@ -25,6 +25,7 @@ venv/
 ENV/
 env/
 .venv
+.venv/
 
 # IDE
 .vscode/
@@ -32,12 +33,14 @@ env/
 *.swp
 *.swo
 .DS_Store
+Thumbs.db
 *.tmp
 
 # Project specific
 *.log
 .env
 .env.local
+.env*
 *.lock
 
 # Spec Kit-specific files

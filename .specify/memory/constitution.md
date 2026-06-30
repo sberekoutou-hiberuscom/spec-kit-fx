@@ -1,12 +1,10 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version change: (template/unratified) → 1.0.0
-Bump rationale: Initial ratification of a concrete constitution for the brownfield
-  Spec Kit / specify-cli codebase, derived from an exhaustive multi-pass analysis of
-  the source tree, test suite, CI pipelines, and project conventions (AGENTS.md,
-  CONTRIBUTING.md, DEVELOPMENT.md). MAJOR baseline because it establishes binding
-  governance where none previously existed.
+Version change: 1.0.0 → 1.1.0
+Bump rationale: MINOR amendment. Added a mandatory confirmation gate before using
+  external plugins, libraries, or scripts so operators can approve need/scope
+  before introducing external execution or dependencies.
 
 Principles defined:
   I.   Code Quality & Architectural Discipline
@@ -26,7 +24,8 @@ Templates reviewed for alignment:
   ✅ .specify/templates/spec-template.md — no constitution-specific tokens; no change needed.
   ✅ .specify/templates/tasks-template.md — task categories (setup/foundational/story/polish)
        already accommodate testing + performance + UX tasks mandated here; no change needed.
-  ✅ .github/agents/speckit.*.agent.md — command guidance is agent-agnostic; no change needed.
+  ✅ .specify/templates/commands/*.md — not present in this repository scaffold; no action required.
+  ✅ README.md and docs/quickstart.md — workflow remains compatible; no wording changes required.
 
 Follow-up TODOs: none. RATIFICATION_DATE set to first adoption date below.
 -->
@@ -154,6 +153,9 @@ The project guards its dependency surface and its on-disk footprint deliberately
   agreement and a justification that existing deps (typer, click, rich, pyyaml, packaging,
   platformdirs, pathspec, json5, readchar) cannot serve the need. New subsystems SHOULD reuse
   existing primitive machinery in-process rather than re-implementing or re-shipping it.
+- **External tools require pre-approval.** Using any external plugin, library, or script in a
+  change workflow is allowed only after explicitly clarifying the operational need and obtaining
+  confirmation from the requester. This applies before installation, execution, or integration.
 - **All paths are validated.** Any project-relative path derived from user/manifest/catalog
   input MUST be confined to the project root (`Path.relative_to` checks) and reject traversal
   payloads; symlink escapes MUST be refused.
@@ -211,4 +213,4 @@ patterns it codifies remain authoritative references.
   Added complexity or any deviation MUST be justified in-PR (and, for plans, in the plan's
   Complexity Tracking section). Unjustified violations block merge.
 
-**Version**: 1.0.0 | **Ratified**: 2026-06-19 | **Last Amended**: 2026-06-19
+**Version**: 1.1.0 | **Ratified**: 2026-06-19 | **Last Amended**: 2026-06-30

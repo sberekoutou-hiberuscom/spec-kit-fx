@@ -1,0 +1,62 @@
+---
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "Pipeline Configuration"
+description: "Schema for configurable pipeline stages, prerequisites, validation gates, resumability, and failure behavior."
+type: object
+required:
+  - schemaVersion
+  - stages
+properties:
+  schemaVersion:
+    type: string
+    description: "Schema version for the pipeline format"
+    pattern: "^\\d+\\.\\d+$"
+    default: "1.0"
+  failureBehavior:
+    type: string
+    description: "Pipeline failure behavior policy"
+    enum:
+      - halt
+      - skip_remaining
+      - continue
+    default: halt
+  resumable:
+    type: boolean
+    description: "Whether pipeline execution can resume from persisted state"
+    default: false
+  stages:
+    type: array
+    description: "Ordered list of pipeline stages"
+    minItems: 1
+    items:
+      type: object
+      required:
+        - id
+        - execution_order
+      properties:
+        id:
+          type: string
+          description: "Stable stage identifier"
+          minLength: 1
+        name:
+          type: string
+          description: "Human-friendly stage label"
+        execution_order:
+          type: integer
+          description: "Configured stage order index"
+          minimum: 1
+        prerequisites:
+          type: array
+          description: "List of prerequisite stage ids"
+          items:
+            type: string
+        validation_gates:
+          type: array
+          description: "Validation checks that must pass before stage execution"
+          items:
+            type: string
+        resumable:
+          type: boolean
+          description: "Stage-level resumability override"
+      additionalProperties: false
+additionalProperties: false
