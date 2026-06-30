@@ -211,9 +211,13 @@ specify extension search
     <h3><em>Fork of Spec Kit maintained by Steve BEREKOUTOU.</em></h3>
 </div>
 
-<p align="center">
-    <strong>spec-kit-fx is a focused fork of Spec Kit: domain manifest and canonical schema tooling, validation helpers, and CI integrations for schema-driven documentation.</strong>
-</p>
+The Specification Orchestration Framework (SOF) extends Specification Driven Development (SDD) into a domain-oriented orchestration framework.
+
+Instead of producing a single software specification, SOF orchestrates a sequence of domain specifications that collectively become the project's single source of truth.
+
+Each domain contributes specialized knowledge while maintaining traceability to upstream specifications.
+
+The framework is designed to support AI-assisted development, structured specifications, and external tool synchronization.
 
 <p align="center">
     <img src="https://img.shields.io/badge/fork-spec-kit-blue" alt="Fork"/>
