@@ -1,6 +1,6 @@
 <div align="center">
     <img src="./media/logo_large.webp" alt="spec-kit-fx Logo" width="200" height="200"/>
-    <h1>🌱 spec-kit-fx (fork)</h1>
+    <h1>🌱 spec-kit-fx </h1>
     <h3><em>Fork of Spec Kit maintained by Steve BEREKOUTOU.</em></h3>
 </div>
 
@@ -205,97 +205,97 @@ Use **extensions** when you need functionality that goes beyond Spec Kit's core.
 specify extension search
 
 # Install an extension
-specify extension add <extension-name>
-```
+<div align="center">
+    <img src="./media/logo_large.webp" alt="spec-kit-fx Logo" width="200" height="200"/>
+    <h1>🌱 spec-kit-fx (fork)</h1>
+    <h3><em>Fork of Spec Kit maintained by Steve BEREKOUTOU.</em></h3>
+</div>
 
-For example, extensions could add Jira integration, post-implementation code review, V-Model test traceability, or project health diagnostics.
+<p align="center">
+    <strong>spec-kit-fx is a focused fork of Spec Kit: domain manifest and canonical schema tooling, validation helpers, and CI integrations for schema-driven documentation.</strong>
+</p>
 
-See the [Extensions reference](https://github.github.io/spec-kit/reference/extensions.html) for the full command guide. Browse the [community extensions](https://github.github.io/spec-kit/community/extensions.html) for what's available.
+<p align="center">
+    <img src="https://img.shields.io/badge/fork-spec-kit-blue" alt="Fork"/>
+    <img src="https://img.shields.io/badge/owner-Steve%20BEREKOUTOU-green" alt="Owner"/>
+</p>
 
-### Presets — Customize Existing Workflows
+---
 
-Use **presets** when you want to change *how* Spec Kit works without adding new capabilities. Presets override the templates and commands that ship with the core *and* with installed extensions — for example, enforcing a compliance-oriented spec format, using domain-specific terminology, or applying organizational standards to plans and tasks. They customize the artifacts and instructions that Spec Kit and its extensions produce.
+## Quick Start
 
-```bash
-# Search available presets
-specify preset search
+This README gives the minimal steps to get started with `spec-kit-fx` in a local development environment.
 
-# Install a preset
-specify preset add <preset-name>
-```
+Prerequisites
 
-For example, presets could restructure spec templates to require regulatory traceability, adapt the workflow to fit the methodology you use (e.g., Agile, Kanban, Waterfall, jobs-to-be-done, or domain-driven design), add mandatory security review gates to plans, enforce test-first task ordering, or localize the entire workflow to a different language. The [pirate-speak demo](https://github.com/mnriem/spec-kit-pirate-speak-preset-demo) shows just how deep the customization can go. Multiple presets can be stacked with priority ordering.
+- `python3` (3.9+) — used for tooling and tests
+- `node` and `npm` — for markdown linting and front-end tooling
+- `git` — repository management
 
-See the [Presets reference](https://github.github.io/spec-kit/reference/presets.html) for the full command guide, including resolution order and priority stacking.
-
-## 📦 Bundles: Role-Based Setups
-
-Extensions and presets are individual building blocks. A **bundle** packages a
-curated set of them — extensions, presets, steps, and workflows — into a single,
-versioned, role-oriented setup so a whole team persona (product manager, business
-analyst, security researcher, developer, …) can be provisioned with one command.
-
-A bundle is described by a hand-written `bundle.yml` manifest. It pins each
-component to a version and, optionally, targets a specific integration; a bundle
-with no `integration` is **agnostic** and inherits whatever integration the
-project already uses.
+Install project dev tools (recommended):
 
 ```bash
-# Discover bundles in the active catalog stack
-specify bundle search [<query>]
-
-# Inspect the exact component set a bundle will add (equals what install does)
-specify bundle info <bundle-id>
-
-# Install a bundle's full component set in one operation
-specify bundle install <bundle-id>
-
-# See what's installed, then update or remove non-destructively
-specify bundle list
-specify bundle update <bundle-id>     # or --all
-specify bundle remove <bundle-id>     # removes only this bundle's components
+python3 -m pip install --user --upgrade ruff pytest PyYAML jsonschema
+npm install -g markdownlint-cli@0.30.0
 ```
 
-Bundles resolve from a **priority-ordered catalog stack** (project > user >
-built-in). Each source carries an install policy: `install-allowed` sources can
-be installed from, while `discovery-only` sources are visible in `search`/`info`
-but refuse installation. Manage the stack with `specify bundle catalog list|add|remove`.
-
-Authors validate and package bundles locally. Distribution is hosting the built
-artifact and adding a catalog source; community bundle submissions use the
-[Bundle Submission](https://github.com/github/spec-kit/issues/new?template=bundle_submission.yml)
-issue template so required component catalogs and install evidence can be reviewed:
+Initialize a new project using the `specify` CLI (if installed):
 
 ```bash
-specify bundle validate --path ./my-bundle      # structural + reference checks
-specify bundle build --path ./my-bundle         # produce a versioned .zip artifact
+# If you have the original specify-cli installed, use it to init a project
+specify init my-project --integration copilot
+cd my-project
 ```
 
-Four ready-to-read example manifests live under
-[`examples/bundles/`](examples/bundles/) (product manager, business analyst,
-security researcher, developer).
+If `specify` is not installed, you can still work with this repository directly — specifications and schema tooling live under `specs/` and `schemas/`.
 
-Key guarantees: `info` shows exactly what `install` adds (transparency);
-installs are idempotent and confined to the project root; `remove` never touches
-components another installed bundle still needs; and all consume/author commands
-work **offline** against local or pinned sources.
+Core commands you'll use during feature work (repo-local scripts):
 
-### When to Use Which
+- `bash scripts/bash/setup-plan.sh --json` — scaffold plan from templates
+- `bash scripts/bash/check-prerequisites.sh --json --paths-only` — repo-aware paths & env
+- `bash scripts/bash/validate-schemas.sh` — validate example manifests and canonical objects
 
-| Goal | Use |
-| --- | --- |
-| Add a brand-new command or workflow | Extension |
-| Customize the format of specs, plans, or tasks | Preset |
-| Integrate an external tool or service | Extension |
-| Enforce organizational or regulatory standards | Preset |
-| Ship reusable domain-specific templates | Either — presets for template overrides, extensions for templates bundled with new commands |
-| Provision a complete role-based setup in one command | Bundle |
+For CI and PRs
 
-## 📚 Core Philosophy
+- Documentation-only PRs run a lightweight smoke workflow configured in `.github/workflows/docs-smoke.yml`.
+- After implementing core features, push your branch and open a draft PR to trigger CI validations.
 
-Spec-Driven Development is a structured process that emphasizes:
+---
 
-- **Intent-driven development** where specifications define the "*what*" before the "*how*"
+## Project Overview
+
+This fork focuses on Phase 2: Domain Schemas — a repository-level manifest and canonical object model used to validate and unify domain specifications.
+
+Key locations
+
+- `specs/` — feature specs and implementation plans
+- `schemas/` — JSON Schema files and examples
+- `tools/schema_validator.py` — small CLI to validate YAML/JSON instances
+- `scripts/bash/validate-schemas.sh` — local script used by CI
+- `.github/workflows/docs-smoke.yml` — lightweight docs-only CI that now runs schema validation
+
+---
+
+## Contributing
+
+See `CONTRIBUTING.md` for guidelines. When you submit changes:
+
+- Keep changes small and focused when possible.
+- Run local smoke checks before pushing:
+
+```bash
+ruff check src/ || true
+bash scripts/bash/validate-schemas.sh
+markdownlint _docs specs || true
+```
+
+- Include `Assisted-by: GitHub Copilot (autonomous)` trailer for commits generated by the agent.
+
+---
+
+## License
+
+This repository is provided under the MIT License. See `LICENSE` for details.
 - **Rich specification creation** using guardrails and organizational principles
 - **Multi-step refinement** rather than one-shot code generation from prompts
 - **Heavy reliance** on advanced AI model capabilities for specification interpretation
