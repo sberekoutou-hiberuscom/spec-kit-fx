@@ -1,0 +1,43 @@
+name: Docs Smoke Checks
+
+on:
+  pull_request:
+    paths:
+      - '_docs/**'
+      - 'docs/**'
+      - 'specs/**'
+      - '.specify/**'
+
+jobs:
+  smoke:
+    name: Smoke checks for docs-only changes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install ruff
+        run: python -m pip install --upgrade ruff
+
+      - name: Run ruff
+        run: ruff check src/
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install markdownlint
+        run: npm install -g markdownlint-cli@0.30.0
+
+      - name: Run markdownlint
+        run: markdownlint _docs specs || true
+
+      - name: Template resolution smoke
+        run: |
+          bash scripts/bash/setup-plan.sh --json
+          bash scripts/bash/check-prerequisites.sh --json --paths-only

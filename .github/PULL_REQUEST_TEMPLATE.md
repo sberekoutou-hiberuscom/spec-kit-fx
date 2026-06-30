@@ -1,3 +1,22 @@
+<!-- Pull Request template — includes conditional CI checklist per docs/ci-policy.md -->
+
+## Summary
+
+Describe the changes made and why they are needed.
+
+## Checklist
+
+- [ ] I read the CI policy at `docs/ci-policy.md` and confirmed whether this is a documentation-only change.
+- [ ] For documentation-only changes: I verified smoke checks locally (`ruff`, `markdownlint`, `scripts/bash/setup-plan.sh`).
+- [ ] For template/CLI/runtime changes: I ran the full test suite locally (`pytest`, `ruff`) and included test updates.
+- [ ] I added/updated tests for any behavior changes.
+- [ ] I updated documentation where appropriate.
+
+## CI
+
+This repository uses conditional CI. If your PR only touches docs/specs, the docs-smoke workflow will run. If it touches templates or runtime code, the full CI will run.
+
+Include any notes about CI runs or required reviewers below.
 ## Description
 
 <!-- What does this PR do? Why is it needed? -->
