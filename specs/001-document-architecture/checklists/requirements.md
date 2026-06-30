@@ -1,8 +1,8 @@
 # Specification Quality Checklist: Document Architecture
 
-**Purpose**: Validate specification completeness and quality before proceeding to planning
-**Created**: 2026-06-30
-**Feature**: [spec.md](specs/001-document-architecture/spec.md#L1)
+**Purpose**: Validate specification completeness and quality before proceeding
+to planning **Created**: 2026-06-30 **Feature**: [spec.md](specs/001-document-
+architecture/spec.md#L1)
 
 ## Content Quality
 

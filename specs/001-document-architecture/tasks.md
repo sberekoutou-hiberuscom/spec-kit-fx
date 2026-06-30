@@ -1,5 +1,6 @@
 ---
-description: "Tasks for Document Architecture feature (001-document-architecture)"
+description: "Tasks for Document Architecture feature (001-document-
+architecture)"
 ---
 
 # Tasks: Document Architecture (001-document-architecture)
@@ -8,10 +9,10 @@ description: "Tasks for Document Architecture feature (001-document-architecture
 
 ## Phase 1: Setup (Shared Infrastructure)
 
- - [x] T001 Initialize feature registration in `.specify/feature.json` (specs/001-document-architecture)
- - [x] T002 [P] Copy plan template to `specs/001-document-architecture/plan.md` and verify contents
- - [x] T003 [P] Create constitution file and Sync Impact Report at `.specify/memory/constitution.md`
- - [x] T004 Create or validate architecture document at `_docs/framework-architecture.md`
+- [x] T001 Initialize feature registration in `.specify/feature.json` (specs/001-document-architecture)
+- [x] T002 [P] Copy plan template to `specs/001-document-architecture/plan.md` and verify contents
+- [x] T003 [P] Create constitution file and Sync Impact Report at `.specify/memory/constitution.md`
+- [x] T004 Create or validate architecture document at `_docs/framework-architecture.md`
 
 ---
 
@@ -25,7 +26,8 @@ description: "Tasks for Document Architecture feature (001-document-architecture
 
 ## Phase 3: User Story 1 - Document Current Architecture (Priority: P1)
 
-**Goal**: Produce authoritative, human-readable architecture docs and link them to the canonical spec.
+**Goal**: Produce authoritative, human-readable architecture docs and link them
+to the canonical spec.
 
 - [ ] T008 [US1] Draft `specs/001-document-architecture/spec.md` with acceptance criteria and links to `_docs/framework-architecture.md`
 - [ ] T009 [P] [US1] Add `specs/001-document-architecture/plan.md` describing implementation approach
@@ -36,7 +38,8 @@ description: "Tasks for Document Architecture feature (001-document-architecture
 
 ## Phase 4: User Story 2 - Preserve Compatibility (Priority: P2)
 
-**Goal**: Validate and document that core templates and CLI names remain backward-compatible.
+**Goal**: Validate and document that core templates and CLI names remain
+backward-compatible.
 
 - [ ] T012 [US2] Run template resolution smoke test: `bash scripts/bash/setup-plan.sh --json`
 - [ ] T013 [P] [US2] Verify core command names and agent registration remain present in `src/specify_cli/integrations/` and `commands/`
@@ -49,7 +52,8 @@ description: "Tasks for Document Architecture feature (001-document-architecture
 
 ## Phase 5: User Story 3 - Fork Scaffolding (Priority: P3)
 
-**Goal**: Ensure the fork scaffolding (constitution, data-model, contracts, checklists) is present and discoverable.
+**Goal**: Ensure the fork scaffolding (constitution, data-model, contracts,
+checklists) is present and discoverable.
 
 - [ ] T015 [US3] Create `specs/001-document-architecture/data-model.md` describing Domain/Pipeline/Adapter/Manifest entities
 - [ ] T016 [US3] Create `specs/001-document-architecture/contracts/README.md` as a placeholder for future contracts

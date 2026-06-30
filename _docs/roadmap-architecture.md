@@ -2,12 +2,19 @@
 
 ## Purpose
 
-This roadmap defines the implementation work for SOF v0.1 with two primary outcomes:
+This roadmap defines the implementation work for SOF v0.1 with two primary
+outcomes:
 
-1. Preserve compatibility with the current architecture direction and command model.
-2. Produce architecture documentation detailed enough for an implementation agent to execute work with low ambiguity.
+1. Preserve compatibility with the current architecture direction and command
+model. 2. Produce architecture documentation detailed enough for an
+implementation agent to execute work with low ambiguity.
 
-The roadmap assumes the current v0.1 scope remains centered on constitution, product, UX, and UI while keeping the framework core domain-agnostic and plugin-oriented. Manifest-driven plugin systems typically rely on schema validation, explicit dependency declarations, and deterministic load ordering; those practices are included here to reduce ambiguity and prevent plugin-order failures.[cite:16][cite:21][cite:24]
+The roadmap assumes the current v0.1 scope remains centered on constitution,
+product, UX, and UI while keeping the framework core domain-agnostic and plugin-
+oriented. Manifest-driven plugin systems typically rely on schema validation,
+explicit dependency declarations, and deterministic load ordering; those
+practices are included here to reduce ambiguity and prevent plugin-order
+failures.[cite:16][cite:21][cite:24]
 
 ## Planning assumptions
 
@@ -56,7 +63,8 @@ v0.1 is complete when the following are true:
 
 ### Objectives
 
-Lock the current architecture intent, document compatibility boundaries, and prevent accidental drift during implementation.
+Lock the current architecture intent, document compatibility boundaries, and
+prevent accidental drift during implementation.
 
 ### Tasks
 
@@ -89,7 +97,8 @@ Lock the current architecture intent, document compatibility boundaries, and pre
 
 ### Objectives
 
-Turn the conceptual architecture into explicit contracts that an orchestrator and domain plugins can implement consistently.
+Turn the conceptual architecture into explicit contracts that an orchestrator
+and domain plugins can implement consistently.
 
 ### Tasks
 
@@ -142,7 +151,8 @@ Turn the conceptual architecture into explicit contracts that an orchestrator an
 
 ### Objectives
 
-Make pipeline execution deterministic while preserving configurability and future extensibility.
+Make pipeline execution deterministic while preserving configurability and
+future extensibility.
 
 ### Tasks
 
@@ -179,7 +189,8 @@ Make pipeline execution deterministic while preserving configurability and futur
 
 ### Objectives
 
-Implement the framework core as an orchestration runtime with no embedded domain logic.
+Implement the framework core as an orchestration runtime with no embedded domain
+logic.
 
 ### Tasks
 
@@ -220,7 +231,8 @@ Implement the framework core as an orchestration runtime with no embedded domain
 
 ### Objectives
 
-Standardize how domains are authored so new domains can be added without changing framework core.
+Standardize how domains are authored so new domains can be added without
+changing framework core.
 
 ### Tasks
 
@@ -296,7 +308,8 @@ Operationalize the “structured before generated” principle end to end.
 
 ### Objectives
 
-Prevent broken references, orphan objects, invalid manifests, and architecture drift.
+Prevent broken references, orphan objects, invalid manifests, and architecture
+drift.
 
 ### Tasks
 
@@ -361,7 +374,8 @@ Preserve the familiar SDD interaction model while making it pipeline-aware.
 
 ### Objectives
 
-Deliver the first working vertical slice across Constitution, Product, UX, and UI.
+Deliver the first working vertical slice across Constitution, Product, UX, and
+UI.
 
 ### Tasks
 
@@ -398,7 +412,8 @@ Deliver the first working vertical slice across Constitution, Product, UX, and U
 
 ### Objectives
 
-Prepare integration points for external tools while preserving canonical control inside SOF.
+Prepare integration points for external tools while preserving canonical control
+inside SOF.
 
 ### Tasks
 
@@ -440,7 +455,8 @@ Prepare integration points for external tools while preserving canonical control
 
 ### Objectives
 
-Package the roadmap and architecture so implementation agents can execute work in bounded slices.
+Package the roadmap and architecture so implementation agents can execute work
+in bounded slices.
 
 ### Tasks
 
@@ -449,13 +465,10 @@ Package the roadmap and architecture so implementation agents can execute work i
 - Add acceptance criteria for each task.
 - Add “definition of ready” and “definition of done” templates.
 - Add implementation order recommendation:
-  1. schemas;
-  2. dependency resolver;
-  3. orchestrator skeleton;
-  4. validator engine;
-  5. markdown generator;
-  6. Phase 0 domains;
-  7. adapter stubs.
+
+1. schemas; 2. dependency resolver; 3. orchestrator skeleton; 4. validator
+engine; 5. markdown generator; 6. Phase 0 domains; 7. adapter stubs.
+
 - Create a task board view in Markdown for ingestion by an implementation agent.
 
 ### Deliverables
@@ -529,7 +542,9 @@ Package the roadmap and architecture so implementation agents can execute work i
 - Phase 9
 - Phase 10
 
-This ordering keeps architecture and compatibility documentation ahead of deep implementation, which is important when roadmap and documentation need to stay synchronized with product decisions.[cite:18]
+This ordering keeps architecture and compatibility documentation ahead of deep
+implementation, which is important when roadmap and documentation need to stay
+synchronized with product decisions.[cite:18]
 
 ## Risks and mitigations
 
