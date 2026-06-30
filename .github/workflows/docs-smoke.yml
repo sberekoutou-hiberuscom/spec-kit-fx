@@ -41,3 +41,10 @@ jobs:
         run: |
           bash scripts/bash/setup-plan.sh --json
           bash scripts/bash/check-prerequisites.sh --json --paths-only
+
+      - name: Install validator dependencies
+        run: python -m pip install --upgrade PyYAML jsonschema
+
+      - name: Run schema validation
+        run: |
+          bash scripts/bash/validate-schemas.sh

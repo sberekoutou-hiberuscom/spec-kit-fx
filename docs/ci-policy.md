@@ -35,6 +35,15 @@ markdownlint _docs specs || true
 bash scripts/bash/setup-plan.sh --json
 bash scripts/bash/check-prerequisites.sh --json --paths-only
 ```
+Schema validation
+
+To validate canonical schema examples locally run:
+
+```
+bash scripts/bash/validate-schemas.sh
+```
+
+This will install `PyYAML` and `jsonschema` into your user environment and run the repository validator against the example files under `schemas/examples/`.
 
 If you need the full CI locally, run the repository's test suite and linters:
 
