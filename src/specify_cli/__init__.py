@@ -619,6 +619,13 @@ from .commands.bundle import register as _register_bundle_cmds  # noqa: E402
 _register_bundle_cmds(app)
 
 
+# ===== Domain Commands =====
+
+# Domain subcommand group (specify domain ...) — see commands/domain/.
+from .commands.domain import register as _register_domain_cmds  # noqa: E402
+_register_domain_cmds(app)
+
+
 # ===== Workflow Commands =====
 
 workflow_app = typer.Typer(

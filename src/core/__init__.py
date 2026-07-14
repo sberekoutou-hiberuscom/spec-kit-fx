@@ -37,6 +37,12 @@ from core._pipeline import PipelineConfig, StageConfig, load_pipeline_config, ex
 # Lifecycle
 from core._lifecycle import run_lifecycle, run_all_stages
 
+# Plugin loader
+from core._plugin_loader import load_plugin
+
+# Validation result
+from core._validation_result import ValidationResult
+
 __all__ = [
     "AdapterSyncError",
     "ConfigurationError",
@@ -51,12 +57,14 @@ __all__ = [
     "SchemaError",
     "StageConfig",
     "ValidationError",
+    "ValidationResult",
     "build_graph",
     "discover_manifests",
     "emit_event",
     "execute_pipeline",
     "get_events",
     "load_config",
+    "load_plugin",
     "load_pipeline_config",
     "locate_specs",
     "resolve_order",

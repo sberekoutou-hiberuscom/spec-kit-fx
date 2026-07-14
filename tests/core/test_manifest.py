@@ -179,3 +179,53 @@ class TestValidateManifest:
         )
         with pytest.raises(ConfigurationError, match="path|exist"):
             validate_manifest(manifest)
+
+    def test_validators_non_empty_strings(self) -> None:
+        """validate_manifest passes when validators entries are non-empty strings."""
+        manifest = self._make_manifest(
+            {
+                "id": "test",
+                "name": "Test",
+                "version": "1.0.0",
+                "validators": ["my_domain.validators.size_check"],
+            }
+        )
+        validate_manifest(manifest)  # should not raise
+
+    def test_validators_empty_string(self) -> None:
+        """validate_manifest raises SchemaError when a validators entry is empty."""
+        manifest = self._make_manifest(
+            {
+                "id": "test",
+                "name": "Test",
+                "version": "1.0.0",
+                "validators": [""],
+            }
+        )
+        with pytest.raises(SchemaError, match="validators"):
+            validate_manifest(manifest)
+
+    def test_exports_non_empty_strings(self) -> None:
+        """validate_manifest passes when exports entries are non-empty strings."""
+        manifest = self._make_manifest(
+            {
+                "id": "test",
+                "name": "Test",
+                "version": "1.0.0",
+                "exports": ["TypeA", "TypeB"],
+            }
+        )
+        validate_manifest(manifest)  # should not raise
+
+    def test_exports_empty_string(self) -> None:
+        """validate_manifest raises SchemaError when an exports entry is empty."""
+        manifest = self._make_manifest(
+            {
+                "id": "test",
+                "name": "Test",
+                "version": "1.0.0",
+                "exports": ["valid_type", ""],
+            }
+        )
+        with pytest.raises(SchemaError, match="exports"):
+            validate_manifest(manifest)

@@ -137,3 +137,17 @@ def validate_manifest(manifest: DomainManifest) -> None:
             f"Manifest at {manifest.path}: 'depends_on' contains self-reference "
             f"to domain '{manifest.id}'"
         )
+
+    for idx, v in enumerate(manifest.validators):
+        if not isinstance(v, str) or not v.strip():
+            raise SchemaError(
+                f"Manifest at {manifest.path}: 'validators[{idx}]' must be a "
+                f"non-empty string, got {v!r}"
+            )
+
+    for idx, e in enumerate(manifest.exports):
+        if not isinstance(e, str) or not e.strip():
+            raise SchemaError(
+                f"Manifest at {manifest.path}: 'exports[{idx}]' must be a "
+                f"non-empty string, got {e!r}"
+            )
