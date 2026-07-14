@@ -62,3 +62,9 @@ docs/dev
 .github/copilot-instructions.md
 .specify/
 specs/
+
+
+# Agents
+agent/
+.claude/
+.agents/
